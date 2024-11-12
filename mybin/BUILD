@@ -2,7 +2,7 @@ load("@crates//:defs.bzl", "aliases", "all_crate_deps")
 load("@rules_rust//rust:defs.bzl", "rust_binary")
 
 rust_binary(
-    name = "binary",
+    name = "mybin",
     srcs = glob(["**/*.rs"]),
     aliases = aliases(),
     proc_macro_deps = all_crate_deps(
@@ -11,5 +11,7 @@ rust_binary(
     visibility = ["//visibility:public"],
     deps = all_crate_deps(
         normal = True,
-    ),
+    ) + [
+        "//mylib",
+    ],
 )

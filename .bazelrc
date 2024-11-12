@@ -1,0 +1,6 @@
+# Enable symlink support on Windows
+
+startup --windows_enable_symlinks
+build --enable_runfiles
+
+try-import %workspace%/user.bazelrc
